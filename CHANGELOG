@@ -1,0 +1,85 @@
+
+	/********************************************************************
+	Changes for 2011-11-25
+	/********************************************************************
+
+	Add a strong binding for Cantarell to fix display problems.
+	Add all Windows 7 fonts into the TT instructed list for mega-improvement
+	  on non-latin fonts!  Why didn't I do this before?
+
+
+	/********************************************************************
+	Changes for 2011-11-20
+	/********************************************************************
+
+	Remove the Canwell replacement.
+	Rearrange the order of variables near the top of this file.
+
+
+	/********************************************************************
+	Changes for 2011-11-17
+	/********************************************************************
+
+	Added these to TT list:
+		Arimo
+		Cousine
+		Tinos
+		Ubuntu
+
+	Added variables near the top that allow you to adjust settings and replacements very easily (see below)
+	Finished out the OS styles named "OSX" (formerly Apple) and "Linux".
+	Added settings to either enable or disable your own global replacements
+	Added settings to enable or disable bitmap fonts (this still has issues-  please help)
+	Added config option to force replacements of similar fontsets
+	Removed matrix settings for Verdana / Dejavu Sans.  Now built into Infinality patch
+	Helvetica Neue and Courier New are not replaced on OS styles besides "Infinality".
+	Don't create an artificial bold face for really light or thick fonts.
+	NOTE: Assistance with replacments and default fonts for various OS styles is welcomed!
+
+
+	/********************************************************************
+	Changes for 2010-11-14
+	/********************************************************************
+
+	Added configuration for different rendering styles. These can be enabled by
+	  uncommenting the style you want.  For instance, if you want your system
+	  to look like Windows 98, uncomment that style, and make sure others
+	  are commented out.  Obviously you'd want to have appropriate fonts
+	  installed for that rendering style.  Aliases for different OS
+	  fontsets will be added eventually.  The old default style is now
+	  considered "Infinality" style.  Not all styles that are defined are
+	  filled in yet- but "Apple" and anything above it are.
+
+	Due to the above, in combination with the prevalence of @font-face on
+	  the web, I've made "Infinality" style rendering use autohint by
+	  default, and only call out fonts that specifically should use TT
+	  hinting.  The patched autohint will render more fonts, better, than
+	  TT native hinting will.
+
+
+	/********************************************************************
+	Changes for 2010-10-22
+	/********************************************************************
+
+	Promoted Century Gothic, Arial Black and Calibri to Full TT subpixel hinting
+	Added Google fonts
+	Added Nimbus fonts
+	Added more Apple fonts
+	Replace Courier New with Apple's Courier - MUCH nicer result
+	Better comments to help new users understand what everything means
+	Reorganization of some rules
+	General Cleanup
+	Removed code for artificial oblique, as most distros have this in
+	  /etc/fonts/conf.d/
+	Added nonlatin font alias preferences that favor MS fonts, which have the
+	  best hinting AFAICT. If you have all Windows Vista/7 fonts installed,
+	  www.wikipedia.org should look pretty nice.
+
+	/********************************************************************
+	Changes for 2010-10-03
+	/********************************************************************
+
+	Promoted Geneva, Geneva CY to Full TT subpixel hinting.
+	Added an alias for "Trebuchet" to point to "Trebuchet MS"
+	Minor comment updates
+
