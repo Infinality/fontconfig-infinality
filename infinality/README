@@ -82,5 +82,16 @@ modify them appropriately:
 updates to fontconfig-infinality will not overwrite your customizations, and 
 will include any updates to other non-customized files, because those files 
 are being linked from /etc/fonts/infinality/conf.src/.
-  
+
+6) Change the conf.d symlink.  For instance, if /etc/fonts/infinality/conf.d
+is pointing to styles.conf.avail/win7, and you want to use your "custom" 
+style, do this:
+
+  cd /etc/fonts/infinality
+  rm conf.d
+  ln -s styles.conf.avail/custom conf.d
+
+7) Any program that uses fontconfig (which is most of them) will now render
+things according to the "custom" style you have created.
+
 
