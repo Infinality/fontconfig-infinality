@@ -11,17 +11,54 @@ conjunction with the freetype-infinality subpixel hinting patch at:
 Windows, OSX, Google, and Linux fonts are included in the rules
 along with other misc popular or useful fonts found on the web.
 
-Feel free to propose additions and changes to this file at:
-http://www.infinality.net/forum/
+Feel free to propose additions, changes and questions regarding this
+configuration at:
+
+  http://www.infinality.net/forum/
+
+If you have a favorite font that is not included or not rendered
+properly, please let me know and I'll try to fix and include it.
 
 
 
 HOW TO USE THIS CONFIGURATION
 =============================
 
-1) Unzip fontconfig-infinality into /etc/fonts/.
+1) Unzip fontconfig-infinality into /etc/fonts/.  Note that there should be no subfolder called /etc/fonts/fontconfig-infinality/.  It should go in /etc/fonts/.
 2) Ensure /etc/fonts/conf.d/ contains a symlink 52-infinality.conf which points to /etc/fonts/infinality/infinality.conf
 3) Adjust various settings in /etc/fonts/infinality/infinality.conf to personal taste.
 4) Change rendering style with the symlink /etc/fonts/infinality/conf.d to personal taste.
 
-/etc/fonts/local.conf should either not exist, or have no infinality-related configurations in it.
+/etc/fonts/local.conf should either not exist, or have no infinality-related configurations in it.  The local.conf is now obsolete and completely replaced by this configuration.
+
+
+
+HOW TO CREATE YOUR OWN CUSTOM RENDERING STYLE
+=============================================
+
+1) Clone a directory inside styles.conf.avail.  For instance, if you want to start out with the base style as "win7" and name the new style "custom", do this as root:
+
+  cd /etc/fonts/infinality/styles.conf.avail
+  cp -Rp win7 custom
+
+2) Enter the "custom" directory and view it / examine the files you want to change:
+
+  cd custom
+  ls -la
+
+3) For files you want to change, remove the symlink and copy the actual file over.  (Or, if you'd like to make an addition to a style, create a new file instead of copying and removing.)  For instance, if you want to change the os replacements for Windows 7 in 41-repl-os-win.conf, do this:
+
+  cp 41-repl-os-win.conf 41-repl-os-custom.conf
+  rm 41-repl-os-win.conf
+
+  Now you have a local copy of this file that will not be overwritten after any updates.
+
+4) Make your modifications.  For instance, if you want to make serif fonts get replaced with "Georgia" instead of "Times New Roman", find these lines and modify them appropriately:
+
+  <edit name="family" mode="prepend" binding="strong">
+    <string>Times New Roman</string> 
+  </edit>
+
+5) Repeat steps 3 and 4 for each file you would like to customized.  Future updates to fontconfig-infinality will not overwrite your customizations, and will include any updates to files that are being linked from /etc/fonts/infinality/conf.src/.
+  
+
