@@ -1,3 +1,43 @@
+	/********************************************************************
+	Changes for 2011-12-??
+	/********************************************************************
+
+	Split out local.conf into separate files that use symlinks, as
+	  is the fontconfig standard.  This should also make it easier
+	  for package mantainers to use.
+	Fix how Chrome renders fonts at small ppem
+	Removed <rescan> stuff.  Didn't work, and already taken care of in default fc
+	Fixed some erroneous config options.  Thanks Yegorious.
+	Sorted out the bitmap font rendering issues.  All configuration for it
+	  is now in the user configurable variable section.
+	Allow bitmap fonts by default, but don't force them.
+	For Infinality rendering style, replace Courier New with Courier for < 11ppem.
+	Added DPI setting
+	Promoted these to TT BCI rendering:
+		Apple Chancery
+		Century
+		Chalkboard
+		Frutiger Linotype
+		Geneva CY
+		Gill Sans
+		Hard Gothic
+		Herculanum
+		Hoefler Text
+		Lobster
+		Lucida Sans
+		Lucida Sans Typewriter
+		Marker Felt
+		Neuton
+		Open Sans
+		Reenie Beanie
+		Skia
+		Sylfaen
+		Tangerine
+		Times
+		Vollkorn
+		Yanone Kaffeesatz
+		Zapfino
+
 
 	/********************************************************************
 	Changes for 2011-11-25
@@ -6,6 +46,7 @@
 	Add a strong binding for Cantarell to fix display problems.
 	Add all Windows 7 fonts into the TT instructed list for mega-improvement
 	  on non-latin fonts!  Why didn't I do this before?
+	Moved Droid fonts into TT list
 
 
 	/********************************************************************

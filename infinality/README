@@ -1,13 +1,27 @@
 
-	/********************************************************************
-	                              README
-	/********************************************************************
+/********************************************************************
+                              README
+/********************************************************************
 
-	These .conf files are intended to be used in conjunction with the 
-	freetype-infinality subpixel hinting patch at:
-		http://www.infinality.net/
+These fontconfig configuration files are intended to be used in 
+conjunction with the freetype-infinality subpixel hinting patch at:
 
-	- Windows, OSX, Google, and Linux fonts are included in the rules
-	  along with other misc popular or useful fonts found on the web.
-	- Feel free to propose additions and changes to this file at:
-		http://www.infinality.net/forum/
+  http://www.infinality.net/
+
+Windows, OSX, Google, and Linux fonts are included in the rules
+along with other misc popular or useful fonts found on the web.
+
+Feel free to propose additions and changes to this file at:
+http://www.infinality.net/forum/
+
+
+
+HOW TO USE THIS CONFIGURATION
+=============================
+
+1) Unzip fontconfig-infinality into /etc/fonts/.
+2) Ensure /etc/fonts/conf.d/ contains a symlink 52-infinality.conf which points to /etc/fonts/infinality/infinality.conf
+3) Adjust various settings in /etc/fonts/infinality/infinality.conf to personal taste.
+4) Change rendering style with the symlink /etc/fonts/infinality/conf.d to personal taste.
+
+/etc/fonts/local.conf should either not exist, or have no infinality-related configurations in it.
