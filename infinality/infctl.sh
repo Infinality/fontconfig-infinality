@@ -22,6 +22,7 @@ function populatedirs {
 				&& ln -sf -t $stylesdir/$style ../../$cfile
 		done
 	done
+	return 0
 }
 
 function selectconfd {
@@ -49,5 +50,4 @@ case $1 in
 	*)
 		usage ;;
 esac
-
 
