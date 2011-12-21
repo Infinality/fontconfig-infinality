@@ -1,7 +1,7 @@
 #!/bin/bash
 
-styles="infinality osx osx2 linux win7 winxp win98"
 stylesdir=styles.conf.avail
+styles=`/bin/ls $stylesdir`
 
 function createdirs {
 	if [[ -d $stylesdir ]]; then
