@@ -1,9 +1,9 @@
 #!/bin/bash
 
+cd /etc/fonts/infinality
+
 stylesdir=styles.conf.avail
 styles=`/bin/ls $stylesdir`
-
-cd /etc/fonts/infinality
 
 function createdirs {
 	if [[ -d $stylesdir ]]; then
