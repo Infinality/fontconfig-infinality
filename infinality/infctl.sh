@@ -38,7 +38,6 @@ function usage {
 	printf "\tUsage:\n"
 	printf "\tmakestyles - populate styles directories with symlinks to conf.src\n"
 	printf "\tsetstyle - set default style\n"
-	showstyles
 }
 
 ################ Main ###################
