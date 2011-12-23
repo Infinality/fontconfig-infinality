@@ -4,15 +4,19 @@
 
 	Split out local.conf into separate files that use symlinks, as
 	  is the fontconfig standard.  This should also make it easier
-	  for package mantainers to use.
+	  for package mantainers to use.  Thanks Yegorius.
+	Tons of cleanup to XML. Thanks Yegorius.
+	New methodology to quickly create and update existing styles, using 
+	  infctl.sh script.  Thanks Yegorius.
 	Fix how Chrome renders fonts at small ppem
 	Removed <rescan> stuff.  Didn't work, and already taken care of in default fc
-	Fixed some erroneous config options.  Thanks Yegorious.
+	Fixed some erroneous config options.  Thanks Yegorius.
 	Sorted out the bitmap font rendering issues.  All configuration for it
-	  is now in the user configurable variable section.
+	  is now in infinality.conf.
 	Allow bitmap fonts by default, but don't force them.
 	For Infinality rendering style, replace Courier New with Courier for < 11ppem.
 	Added DPI setting
+	Added selective font rendering for Droid Sans and Mono to use autohint > 18ppem.
 	Promoted these to TT BCI rendering:
 		Apple Chancery
 		Century
