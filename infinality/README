@@ -86,7 +86,7 @@ are being linked from /etc/fonts/infinality/conf.src/.
 6) Run infctl.sh to set the style:
 
   cd /etc/fonts/infinality
-  ./infctl.sh setstyle
+  ./infctl.sh setstyle custom
 
 7) Any program that uses fontconfig (which is most of them) will now render
 things according to the "custom" style you have created.
