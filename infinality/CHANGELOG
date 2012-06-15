@@ -1,130 +1,339 @@
-	/********************************************************************
-	Changes for 2011-12-??
-	/********************************************************************
+Infinality <-@->	2012-06-15
 
-	Split out local.conf into separate files that use symlinks, as
-	  is the fontconfig standard.  This should also make it easier
-	  for package mantainers to use.  Thanks Yegorius.
-	Tons of cleanup to XML. Thanks Yegorius.
-	New methodology to quickly create and update existing styles, using 
-	  infctl.sh script.  Thanks Yegorius.
-	Fix how Chrome renders fonts at small ppem
-	Removed <rescan> stuff.  Didn't work, and already taken care of in default fc
-	Fixed some erroneous config options.  Thanks Yegorius.
-	Sorted out the bitmap font rendering issues.  All configuration for it
-	  is now in infinality.conf.
-	Allow bitmap fonts by default, but don't force them.
-	For Infinality rendering style, replace Courier New with Courier for < 11ppem.
-	Added DPI setting
-	Added selective font rendering for Droid Sans and Mono to use autohint > 18ppem.
-	Promoted these to TT BCI rendering:
-		Apple Chancery
-		Century
-		Chalkboard
-		Frutiger Linotype
-		Geneva CY
-		Gill Sans
-		Hard Gothic
-		Herculanum
-		Hoefler Text
-		Lobster
-		Lucida Sans
-		Lucida Sans Typewriter
-		Marker Felt
-		Neuton
-		Open Sans
-		Reenie Beanie
-		Skia
-		Sylfaen
-		Tangerine
-		Times
-		Vollkorn
-		Yanone Kaffeesatz
-		Zapfino
+    Swapped some fonts between non-TT and TT lists
 
+Infinality <-@->	2012-05-16
 
-	/********************************************************************
-	Changes for 2011-11-25
-	/********************************************************************
+    Reject Type 1 fonts because they render poorly.
 
-	Add a strong binding for Cantarell to fix display problems.
-	Add all Windows 7 fonts into the TT instructed list for mega-improvement
-	  on non-latin fonts!  Why didn't I do this before?
-	Moved Droid fonts into TT list
+Infinality <-@->	2012-04-29
 
+    Move some fonts over to the TT list
 
-	/********************************************************************
-	Changes for 2011-11-20
-	/********************************************************************
+Infinality <-@->	2012-04-29
 
-	Remove the Canwell replacement.
-	Rearrange the order of variables near the top of this file.
+    Add Lohit Devanagari
 
+Infinality <-@->	2012-04-28
 
-	/********************************************************************
-	Changes for 2011-11-17
-	/********************************************************************
+    Replace Times with Times New Roman
 
-	Added these to TT list:
-		Arimo
-		Cousine
-		Tinos
-		Ubuntu
+Infinality <-@->	2012-04-28
 
-	Added variables near the top that allow you to adjust settings and replacements very easily (see below)
-	Finished out the OS styles named "OSX" (formerly Apple) and "Linux".
-	Added settings to either enable or disable your own global replacements
-	Added settings to enable or disable bitmap fonts (this still has issues-  please help)
-	Added config option to force replacements of similar fontsets
-	Removed matrix settings for Verdana / Dejavu Sans.  Now built into Infinality patch
-	Helvetica Neue and Courier New are not replaced on OS styles besides "Infinality".
-	Don't create an artificial bold face for really light or thick fonts.
-	NOTE: Assistance with replacments and default fonts for various OS styles is welcomed!
+    Gill Sans enhancements
 
+Infinality <-@->	2012-04-24
 
-	/********************************************************************
-	Changes for 2010-11-14
-	/********************************************************************
+    Add option to enable/disable Qt subpixel positioning
 
-	Added configuration for different rendering styles. These can be enabled by
-	  uncommenting the style you want.  For instance, if you want your system
-	  to look like Windows 98, uncomment that style, and make sure others
-	  are commented out.  Obviously you'd want to have appropriate fonts
-	  installed for that rendering style.  Aliases for different OS
-	  fontsets will be added eventually.  The old default style is now
-	  considered "Infinality" style.  Not all styles that are defined are
-	  filled in yet- but "Apple" and anything above it are.
+Infinality <-@->	2012-04-18
 
-	Due to the above, in combination with the prevalence of @font-face on
-	  the web, I've made "Infinality" style rendering use autohint by
-	  default, and only call out fonts that specifically should use TT
-	  hinting.  The patched autohint will render more fonts, better, than
-	  TT native hinting will.
+    Do replacement on Courier 10 Pitch because it looks like ass
 
+yegorius <-@->	2012-04-07
 
-	/********************************************************************
-	Changes for 2010-10-22
-	/********************************************************************
+    try to fix issue  #4. second attempt.
 
-	Promoted Century Gothic, Arial Black and Calibri to Full TT subpixel hinting
-	Added Google fonts
-	Added Nimbus fonts
-	Added more Apple fonts
-	Replace Courier New with Apple's Courier - MUCH nicer result
-	Better comments to help new users understand what everything means
-	Reorganization of some rules
-	General Cleanup
-	Removed code for artificial oblique, as most distros have this in
-	  /etc/fonts/conf.d/
-	Added nonlatin font alias preferences that favor MS fonts, which have the
-	  best hinting AFAICT. If you have all Windows Vista/7 fonts installed,
-	  www.wikipedia.org should look pretty nice.
+yegorius <-@->	2012-04-02
 
-	/********************************************************************
-	Changes for 2010-10-03
-	/********************************************************************
+    try to fix issue #4
 
-	Promoted Geneva, Geneva CY to Full TT subpixel hinting.
-	Added an alias for "Trebuchet" to point to "Trebuchet MS"
-	Minor comment updates
+yegorius <-@->	2012-04-02
 
+    clean up defaults
+
+yegorius <-@->	2012-04-02
+
+    clean up
+
+yegorius <-@->	2012-04-01
+
+    default DejaVu config files do the same
+
+yegorius <-@->	2012-04-01
+
+    let the lang property have greater precedence during distance computation (for non-latin defaults)
+
+Infinality <-@->	2012-01-13
+
+    Add PragmataPro
+
+Infinality <-@->	2011-12-28
+
+    Add menlo
+
+Infinality <-@->	2011-12-27
+
+    Add BPmono
+
+Infinality <-@->	2011-12-26
+
+    Add TheSans Mono
+
+Infinality <-@->	2011-12-26
+
+    Fix Lucida Sans Typewriter Family name
+
+Infinality <-@->	2011-12-26
+
+    Add more TT fonts to list
+
+Infinality <-@->	2011-12-26
+
+    Reject Inconsolata bold with <rejectfont> and <patelt>
+
+Infinality <-@->	2011-12-26
+
+    Use a different method to reject Inconsolata Bold.otf
+
+Infinality <-@->	2011-12-26
+
+    Force synthetic bold.  Inconsolata-Bold.otf looks terrible with BCI
+
+Infinality <-@->	2011-12-26
+
+    Add current google web fonts
+
+Infinality <-@->	2011-12-26
+
+    Add Inconsolata
+
+Infinality <-@->	2011-12-26
+
+    Move inconsolata to TT list.  Wow.  No idea it had TT instructions.
+
+Infinality <-@->	2011-12-25
+
+    Alphabetize
+
+Infinality <-@->	2011-12-25
+
+    Updated symlinks
+
+Infinality <-@->	2011-12-25
+
+    Symlink updates
+
+Infinality <-@->	2011-12-25
+
+    Move some content into 90-no-synthetic.conf
+
+Infinality <-@->	2011-12-25
+
+    Some rearrangment.  Added option to render monospace as BCI/bitmap.
+
+Infinality <-@->	2011-12-25
+
+    Add rendering rules for traced bitmaps and bitmap monospace fonts
+
+Infinality <-@->	2011-12-25
+
+    Don't do synthetic operations on certain things
+
+Infinality <-@->	2011-12-25
+
+    Split part into a new file
+
+Infinality <-@->	2011-12-25
+
+    Added Arial Monospaced
+
+Infinality <-@->	2011-12-25
+
+    Generalize repl of terminus (ttf) to other outline ttf fonts
+
+Infinality <-@->	2011-12-25
+
+    Generalize terminus (ttf) repl to other traced bitmap fonts too
+
+Infinality <-@->	2011-12-24
+
+    Don't use this replacement by default.
+
+Infinality <-@->	2011-12-24
+
+    Fix comment
+
+Infinality <-@->	2011-12-24
+
+    Added ubuntu mono and condensed
+
+Infinality <-@->	2011-12-24
+
+    Minor cleanup
+
+Infinality <-@->	2011-12-24
+
+    Consolidate Droid Sans into a single match
+
+Infinality <-@->	2011-12-24
+
+    Demote Copperplate back to using autohint
+
+Infinality <-@->	2011-12-24
+
+    Add a ppem of Gill Sans for autohinting
+
+Infinality <-@->	2011-12-23
+
+    Added Gentium range for BCI
+
+Infinality <-@->	2011-12-23
+
+    Minor update to account for new infctl.sh functionality
+
+Merge: aee35f3 89016d0
+yegorius <-@->	2011-12-24
+
+    Merge branch 'master' of github.com:Infinality/fontconfig-infinality
+
+yegorius <-@->	2011-12-24
+
+    allow style to be set in one command
+
+Infinality <-@->	2011-12-23
+
+    Added recent enhancements to changelog list
+
+Infinality <-@->	2011-12-23
+
+    Updated to include the new "debug" style
+
+Infinality <-@->	2011-12-23
+
+    Change files to selective rendering, followed by one final rendering
+
+Infinality <-@->	2011-12-23
+
+    Create selective rendering conf files for more clarity.
+    Add selective renderings for Droid and Droid Sans Mono
+
+Infinality <-@->	2011-12-23
+
+    Created new style for debug to make it easier to switch on and off.
+
+yegorius <-@->	2011-12-22
+
+    amend previous commit
+
+yegorius <-@->	2011-12-22
+
+    cd to /etc/fonts/infinality to be sure we are there
+
+yegorius <-@->	2011-12-22
+
+    fixed call to non-existent function
+
+Infinality <-@->	2011-12-21
+
+    Updated to recommend using infctl.sh to set style
+
+Infinality <-@->	2011-12-21
+
+    Make script dynamically collect available styles so that any custom ones can
+    be set as well.
+
+Infinality <-@->	2011-12-21
+
+    Rearranged order slightly.  Updated instructions to include infctl.sh
+
+Infinality <-@->	2011-12-21
+
+    Changed the matching from "pattern" to "font" for force_autohint.
+    Fixes Opera.
+
+yegorius <-@->	2011-12-20
+
+    fixed exit status
+
+yegorius <-@->	2011-12-20
+
+    new symlinks
+
+yegorius <-@->	2011-12-20
+
+    wrong inclusion
+
+Infinality <-@->	2011-12-18
+
+    Added Terminus (ttf) back into rule.
+
+yegorius <-@->	2011-12-18
+
+    XML cleanup
+
+Merge: af961d2 d94cb93
+yegorius <-@->	2011-12-16
+
+    Merge branch 'master' of github.com:Infinality/fontconfig-infinality
+    
+    Conflicts:
+infinality/conf.src/43-repl-terminus.conf           
+    
+    merging changes
+
+yegorius <-@->	2011-12-16
+
+    new style handling
+
+Infinality <-@->	2011-12-14
+
+    Added an additional step that was missing but necessary
+
+Infinality <-@->	2011-12-14
+
+    Minor formatting and wording changes
+
+Infinality <-@->	2011-12-14
+
+    Include instructions for creating custom rendering styles.
+
+Infinality <-@->	2011-12-14
+
+    DOH!  Removed garbage line.
+
+Infinality <-@->	2011-12-14
+
+    Added updates into files since the split.
+
+Infinality <-@->	2011-12-14
+
+    Changed path conf.d to infinality/conf.d as it was not being picked up
+    by fontconfig.
+    Rearranged some locations of comments.
+
+yegorius <-@->	2011-12-13
+
+    upstream changes
+
+yegorius <-@->	2011-12-13
+
+    moved infinality.conf
+
+yegorius <-@->	2011-12-13
+
+    new styles directories
+
+yegorius <-@->	2011-12-12
+
+    now include infinality/conf.d
+
+yegorius <-@->	2011-12-12
+
+    directory mangling
+
+yegorius <-@->	2011-12-11
+
+    big bad split of local.conf with XML clean up
+
+yegorius <-@->	2011-12-10
+
+    third commit
+
+Yegorius <-@->	2011-12-10
+
+    second commit
+
+Infinality <-@->	2011-12-09
+
+    first commit
