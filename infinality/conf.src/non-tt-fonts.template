@@ -1,9 +1,0 @@
-	<match target="font">
-		<test name="family">
-			<string>_STRING_</string>
-		</test>
-		<edit name="font_type" mode="assign">
-			<string>NON TT Instructed Font</string>
-		</edit>
-	</match>
-
