@@ -1,3 +1,63 @@
+Infinality <-@->	2012-11-03
+
+    Updated to fix multiple values in <test> errors
+
+Merge: 5624dbd c8a9bae
+Infinality <-@->	2012-11-03
+
+    Merge pull request #10 from dkasak/master
+    
+    Fix 41-repl-os-linux multiple <test> values warnings.
+
+Denis Kasak <-@->	2012-11-03
+
+    Fix 41-repl-os-linux multiple <test> values warnings.
+
+yegorius <-@->	2012-09-29
+
+    Minor changes.
+
+yegorius <-@->	2012-09-29
+
+    New method to generate 60-group-*-fonts files.
+
+Infinality <-@->	2012-09-28
+
+    Prevent error messages about multiple <test> values.
+
+Infinality <-@->	2012-09-28
+
+    Updated to prevent the multiple value <test> errors.
+
+Infinality <-@->	2012-09-28
+
+    Add method to generate the 60- font files from lists.
+
+Merge: 4ac1141 5ad757f
+Infinality <-@->	2012-09-28
+
+    Merge branch 'master' of github.com:Infinality/fontconfig-infinality
+
+Infinality <-@->	2012-09-28
+
+    Add Segoe WP fonts
+
+Infinality <-@->	2012-09-03
+
+    Restructure rules to not have multiple values in <test>
+
+Infinality <-@->	2012-09-03
+
+    Add additional Segoe Fonts
+
+Infinality <-@->	2012-06-19
+
+    Add MIT/Expat license file
+
+Infinality <-@->	2012-06-15
+
+    Update changelog
+
 Infinality <-@->	2012-06-15
 
     Swapped some fonts between non-TT and TT lists
