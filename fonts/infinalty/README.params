@@ -1,0 +1,50 @@
+##################################################################
+### INFINALITY ENVIRONMENT VARIABLES FOR EXTRA RUN-TIME OPTIONS ##
+##################################################################
+#
+# These environment variables require that their respective patches
+# from http://www.infinality.net have been applied to the Freetype
+# installation you are using.  They will do abolutely nothing otherwise!
+#
+
+# This file should be copied to /etc/profile.d/ for system-wide
+# effects and/or included in ~/.bashrc or ~/.bash_profile for per-user
+# effects:
+#
+#   . ~/path/to/this/file/infinality-settings.sh
+#
+# Of course, the per-user settings will override the system-wide
+# settings.  Default values indicated below will be used when the
+# environment variables below are not defined.
+#
+# When I say "Default:" below, I'm referring to the default if no
+# environment variables are set.  Generally this ends up being
+# whatever Freetype's default is set to.
+#
+#
+# Make sure to set your style in /etc/fonts/infinality.conf too.
+#
+# Possible options (lowercase only):
+#
+# default      - Default settings. A compromise that should please most people.
+# osx          - Simulate OSX rendering (WARNING - NEEDS WORK - ALSO LIABLE TO CRASH APPLICATIONS)
+# ipad         - Simulate iPad rendering
+# ubuntu       - Simulate Ubuntu rendering
+# linux        - Generic "Linux" style - no snapping or certain other tweaks
+# winxp        - Simulate Windows XP rendering with normal glyphs
+# winxplight   - Simulate Windows XP rendering with lighter glyphs
+# win7         - Simulate Windows 7 rendering with normal glyphs
+# win7light    - Simulate Windows 7 rendering with lighter glyphs
+# vanilla      - Just subpixel hinting
+# custom       - Your own choice
+#
+# ----- Infinality styles -----
+# classic      - Infinality rendering circa 2010.  No snapping.
+# nudge        - CLASSIC with lightly stem snapping and tweaks
+# push         - CLASSIC with medium stem snapping and tweaks
+# shove        - Full stem snapping and tweaks without sharpening
+# sharpened    - Full stem snapping, tweaks, and Windows-style sharpening
+# infinality   - Settings I use
+# disabled     - Act as though running without the extra infinality enhancements (just subpixel hinting).
+
+

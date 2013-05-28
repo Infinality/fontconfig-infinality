@@ -1,0 +1,1 @@
+/etc/fonts/infinality/rendering-settings.sh

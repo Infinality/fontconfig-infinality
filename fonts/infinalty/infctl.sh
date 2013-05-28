@@ -1,17 +1,20 @@
 #!/bin/bash
 
-cd /etc/fonts/infinality
+#cd /etc/fonts/infinality
 
-stylesdir=styles.conf.avail
-styles=`/bin/ls $stylesdir`
+stylesdir=conf.avail
+styles=$(ls $stylesdir)
+
+renderdir=rendering.avail
+renderstyles=$(ls $renderdir | sed -e 's/\..*$//')
 
 function createdirs {
 	if [[ -d $stylesdir ]]; then
 		rm -r $stylesdir/*
-	else 
+	else
 		mkdir $stylesdir
 	fi
-	
+
 	for style in $styles; do
 		mkdir $stylesdir/$style
 	done
@@ -28,7 +31,7 @@ function populatedirs {
 }
 
 function showstyles {
-	printf "\tavailable styles are: "; echo $styles
+	printf "\tavailable styles are: "; echo $*
 }
 
 function selectconfd {
@@ -49,7 +52,7 @@ function setconfd {
 		selectconfd
 		return $?
 	fi
-	
+
 	for style in $styles; do
 		if [[ "$1" = "$style" ]]; then
 			ln -sfn $stylesdir/$style conf.d
@@ -57,9 +60,41 @@ function setconfd {
 			return 0
 		fi
 	done
-	
+
 	printf "\tNo such style,\n"
-	showstyles
+	showstyles $styles
+	return 1
+}
+
+function selectrendering {
+	printf "Select rendering style:\n"
+	select style in $renderstyles; do
+		if [[ -z "$style" ]]; then
+			printf "\tPlease select available style\n"
+			return 1
+		fi
+		ln -sf $renderdir/$style.sh rendering-style.sh
+		printf "rendering-style.sh -> %s/%s\n" $renderdir $style.sh
+		break
+	done
+}
+
+function setrendering {
+	if [[ -z "$1" ]]; then
+		selectrendering
+		return $?
+	fi
+
+	for style in $renderstyles; do
+		if [[ "$1" = "$style" ]]; then
+			ln -sf $renderdir/$style.sh rendering-style.sh
+			printf "rendering-style.sh -> %s/%s\n" $renderdir $style.sh
+			return 0
+		fi
+	done
+
+	printf "\tNo such style,\n"
+	showstyles $renderstyles
 	return 1
 }
 
@@ -68,6 +103,7 @@ function usage {
 	printf "\tUsage:\n"
 	printf "\tmakestyles - populate styles directories with symlinks to conf.src\n"
 	printf "\tsetstyle - set default style\n"
+	printf "\tsetrendering - set default rendering style\n"
 }
 
 ################ Main ###################
@@ -76,6 +112,8 @@ case $1 in
 		createdirs && populatedirs || exit 1 ;;
 	setstyle)
 		setconfd $2 ;;
+	setrendering)
+		setrendering $2 ;;
 	*)
 		usage ;;
 esac
